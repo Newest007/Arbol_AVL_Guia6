@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Arbol_AVL
 {
-    public partial class Form1 : Form
+    public partial class FormAVL : Form
     {
-        public Form1()
+        public FormAVL()
         {
             InitializeComponent();
         }
