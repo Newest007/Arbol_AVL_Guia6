@@ -25,7 +25,7 @@ namespace Arbol_AVL
 
         DibujaAVL arbolAVL = new DibujaAVL(null);
         DibujaAVL arbolAVL_Letra = new DibujaAVL(null);
-        AVL ClaseAVL = new AVL();
+        AVL NodosAVL = new AVL();
 
         Graphics g;
 
@@ -78,7 +78,31 @@ namespace Arbol_AVL
 
         private void button1_Click(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
+            if(txtValor.Text == "")
+            {
+                errorProvider1.SetError(txtValor, "Valor Obligatorio");
+            }
+            else
+            {
+                try
+                {
+                    dato = int.Parse(txtValor.Text);
+                    arbolAVL.Insertar(dato);
+                    txtValor.Clear();
+                    txtValor.Focus();
+                    lblAltura.Text = arbolAVL.Raiz.getAltura(arbolAVL.Raiz).ToString();
+                    cont++;
+                    Refresh();
+                    Refresh();
 
+                }
+                catch(Exception ex)
+                {
+                    errorProvider1.SetError(txtValor, "Debe ser un valor numérico");
+                }
+
+            }
         }
     }
 }

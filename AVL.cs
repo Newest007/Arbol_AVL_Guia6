@@ -62,12 +62,13 @@ namespace Arbol_AVL
         {
             if (Raiz == null)
                 Raiz = new AVL(valorNuevo, null, null, null);
-            else if(valorNuevo < Raiz.valor)
+
+            else if (valorNuevo < Raiz.valor)
             {
                 Raiz.NodoIzquierdo = Insertar(valorNuevo, Raiz.NodoIzquierdo);
             }
 
-            else if(valorNuevo>Raiz.valor)
+            else if (valorNuevo > Raiz.valor) 
             {
                 Raiz.NodoDerecho = Insertar(valorNuevo, Raiz.NodoDerecho);
             }
@@ -81,29 +82,22 @@ namespace Arbol_AVL
             if (Alturas(Raiz.NodoIzquierdo) - Alturas(Raiz.NodoDerecho) == 2)
             {
                 if (valorNuevo < Raiz.NodoIzquierdo.valor)
-                {
-                    MessageBox.Show("Se realizara una Rotación Izquierda Simple", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Raiz = RotacionIzquierdaSimple(Raiz);
-                }
+                
                 else
-                {
-                    MessageBox.Show("Se realizara una Rotación Izquierda Doble", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Raiz = RotacionIzquierdaDoble(Raiz);
-                }
+                
             }
 
             if (Alturas(Raiz.NodoDerecho) - Alturas(Raiz.NodoIzquierdo) == 2)
             {
+
                 if (valorNuevo > Raiz.NodoDerecho.valor)
-                {
-                    MessageBox.Show("Se realizara una Rotación Derecha Simple", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Raiz = RotacionDerechaSimple(Raiz);
-                }
+
                 else
-                {
-                    MessageBox.Show("Se realizara una Rotación Derecha Doble", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Raiz = RotacionDerechaDoble(Raiz);
-                }
+             
             }
 
             Raiz.altura = max(Alturas(Raiz.NodoIzquierdo), Alturas(Raiz.NodoDerecho)) + 1;
@@ -129,6 +123,7 @@ namespace Arbol_AVL
         //Rotación Izquierda Simple
         private static AVL RotacionIzquierdaSimple (AVL n2)
         {
+            MessageBox.Show("Se realizara una Rotación Izquierda Simple", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AVL n1 = n2.NodoIzquierdo;
             n2.NodoIzquierdo = n1.NodoDerecho;
             n1.NodoDerecho = n2;
@@ -141,6 +136,7 @@ namespace Arbol_AVL
         //Rotación Derecha Simple
         private static AVL RotacionDerechaSimple(AVL n1)
         {
+            MessageBox.Show("Se realizara una Rotación Derecha Simple", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AVL n2 = n1.NodoDerecho;
             n1.NodoDerecho = n2.NodoIzquierdo;
             n2.NodoIzquierdo = n1;
@@ -152,6 +148,7 @@ namespace Arbol_AVL
         //Doble Rotación Izquierda
         private static AVL RotacionIzquierdaDoble(AVL n3)
         {
+            MessageBox.Show("Se realizara una Rotación Izquierda Doble", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             n3.NodoIzquierdo = RotacionDerechaSimple(n3.NodoIzquierdo);
             return RotacionDerechaSimple(n3);
         }
@@ -159,6 +156,7 @@ namespace Arbol_AVL
         //Doble Rotacion Derecha
         private static AVL RotacionDerechaDoble(AVL n1)
         {
+            MessageBox.Show("Se realizara una Rotación Derecha Doble", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             n1.NodoDerecho = RotacionIzquierdaSimple(n1.NodoDerecho);
             return RotacionDerechaSimple(n1);
         }
