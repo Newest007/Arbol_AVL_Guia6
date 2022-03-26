@@ -18,6 +18,25 @@ namespace Arbol_AVL
         public Rectangle prueba;
         public DibujaAVL arbol;
 
+
+        //============================================================//
+        public List<int> listaPreorden = new List<int>();
+        public List<int> listaInorden = new List<int>();
+        public List<int> listaPostorden = new List<int>();
+
+        public void Preorden(AVL nodo)
+        {
+            if(nodo != null)
+            {
+                listaPreorden.Add(nodo.valor);
+                Preorden(nodo.NodoIzquierdo);
+                Preorden(nodo.NodoDerecho);
+            }
+
+        }
+        //=============================================================//
+
+
         public AVL() { }
 
         public DibujaAVL Arbol
