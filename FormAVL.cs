@@ -104,5 +104,69 @@ namespace Arbol_AVL
 
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            errorProvider1.Clear();
+            if(txtValor.Text == "")
+            {
+                errorProvider1.SetError(txtValor, "Valor Obligatorio");
+            }
+            else
+            {
+                try
+                {
+                    datb = int.Parse(txtValor.Text);
+                    arbolAVL.buscar(datb);
+                    pintaR = 2;
+                    Refresh();
+                    txtValor.Clear();
+                }
+                catch(Exception ex)
+                {
+                    errorProvider1.SetError(txtValor, "Debe ser un valor numérico");
+                }
+
+            }
+
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            if(txtValor.Text == "")
+            {
+                errorProvider1.SetError(txtValor, "Valor Obligatorio");
+            }
+            else
+            {
+                try
+                {
+                    dato = int.Parse(txtValor.Text);
+                    txtValor.Clear();
+                    arbolAVL.Eliminar(dato);
+                    lblAltura.Text = arbolAVL.Raiz.getAltura(arbolAVL.Raiz).ToString();
+                    Refresh();
+                    Refresh();
+                    cont2++;
+                }
+                catch(Exception ex)
+                {
+                    errorProvider1.SetError(txtValor, "Debe de ser un valor numérico");
+                }
+                
+
+            }
+
+            Refresh(); Refresh(); Refresh();
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

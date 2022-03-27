@@ -81,6 +81,7 @@ namespace Arbol_AVL
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEliminar
             // 
@@ -93,6 +94,7 @@ namespace Arbol_AVL
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar Dato";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
@@ -106,6 +108,7 @@ namespace Arbol_AVL
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar Dato";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAgregar
             // 
