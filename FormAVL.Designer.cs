@@ -220,7 +220,7 @@ namespace Arbol_AVL
             // rbtnEnOrden
             // 
             this.rbtnEnOrden.AutoSize = true;
-            this.rbtnEnOrden.Location = new System.Drawing.Point(137, 74);
+            this.rbtnEnOrden.Location = new System.Drawing.Point(132, 33);
             this.rbtnEnOrden.Name = "rbtnEnOrden";
             this.rbtnEnOrden.Size = new System.Drawing.Size(108, 30);
             this.rbtnEnOrden.TabIndex = 1;
@@ -231,7 +231,7 @@ namespace Arbol_AVL
             // rbtnPreOrden
             // 
             this.rbtnPreOrden.AutoSize = true;
-            this.rbtnPreOrden.Location = new System.Drawing.Point(137, 29);
+            this.rbtnPreOrden.Location = new System.Drawing.Point(132, 74);
             this.rbtnPreOrden.Name = "rbtnPreOrden";
             this.rbtnPreOrden.Size = new System.Drawing.Size(115, 30);
             this.rbtnPreOrden.TabIndex = 0;

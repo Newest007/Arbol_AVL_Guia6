@@ -69,7 +69,7 @@ namespace Arbol_AVL
             {
                 if(Raiz != null)
                 {
-                    colorear(grafo, fuente, Brushes.Blue, RellenoFuente, Lapiz, Raiz.NodoIzquierdo, post, inor, preor);
+                    colorear(grafo, fuente, Brushes.Black, RellenoFuente, Lapiz, Raiz.NodoIzquierdo, post, inor, preor);
                     Raiz.colorear(grafo, fuente, entorno, RellenoFuente, Lapiz);
                     Thread.Sleep(500);
                     Raiz.colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz);
@@ -84,7 +84,7 @@ namespace Arbol_AVL
             {
                 if(Raiz != null)
                 {
-                    Raiz.colorear(grafo, fuente, Brushes.Yellow, Brushes.Blue, Pens.Black);
+                    Raiz.colorear(grafo, fuente, Brushes.Yellow, Brushes.Black, Pens.Black);
                     Thread.Sleep(500);
                     Raiz.colorear(grafo, fuente, Brushes.White, Brushes.Black, Pens.Black);
                     colorear(grafo, fuente, Brushes.Blue, RellenoFuente, Lapiz, Raiz.NodoIzquierdo, post, inor, preor);
@@ -98,7 +98,7 @@ namespace Arbol_AVL
             {
                 if(Raiz != null)
                 {
-                    colorear(grafo, fuente, Brushes.Blue, RellenoFuente, Lapiz, Raiz.NodoIzquierdo, post, inor, preor);
+                    colorear(grafo, fuente, Brushes.Black, RellenoFuente, Lapiz, Raiz.NodoIzquierdo, post, inor, preor);
                     colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.NodoDerecho, post, inor, preor);
                     Raiz.colorear(grafo, fuente, entorno, RellenoFuente, Lapiz);
                     Thread.Sleep(500);
@@ -124,7 +124,7 @@ namespace Arbol_AVL
                 if(busqueda < Raiz.valor)
                 {
                     Thread.Sleep(500);
-                    Raiz.colorear(grafo, fuente, entorno, Brushes.Blue, Lapiz);
+                    Raiz.colorear(grafo, fuente, entorno, Brushes.Black, Lapiz);
                     colorearBuscar(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.NodoIzquierdo, busqueda);
                 }
                 else

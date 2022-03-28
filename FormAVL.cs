@@ -45,13 +45,13 @@ namespace Arbol_AVL
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             g = e.Graphics;
 
-            arbolAVL.DibujarArbol(g, this.Font, Brushes.White, Brushes.Black, Pens.White, datb, Brushes.Black);
+            arbolAVL.DibujarArbol(g, this.Font, Brushes.White, Brushes.Black, Pens.White, datb, Brushes.White);
             
             datb = 0;
 
             if(pintaR==1)
             {
-                arbolAVL.colorear(g, this.Font, Brushes.Black, Brushes.Yellow, Pens.Blue, arbolAVL.Raiz, rbtnPostOrden.Checked, rbtnEnOrden.Checked, rbtnPreOrden.Checked);
+                arbolAVL.colorear(g, this.Font, Brushes.Black, Brushes.Yellow, Pens.Black, arbolAVL.Raiz, rbtnPostOrden.Checked, rbtnEnOrden.Checked, rbtnPreOrden.Checked);
                 pintaR = 0;
             }
 
@@ -72,6 +72,25 @@ namespace Arbol_AVL
 
         private void button5_Click(object sender, EventArgs e)
         {
+            //InOrden
+            if(rbtnEnOrden.Checked)
+            {
+                inor = true;
+                pintaR = 1;
+                NodosAVL.listaInorden.Clear();
+                lstBox.Items.Clear();
+
+                NodosAVL.Inorden(arbolAVL.Raiz);
+
+                foreach (var valores in NodosAVL.listaInorden)
+                {
+                   lstBox.Items.Add(valores);
+                }
+
+                Refresh();
+                
+            }
+
 
             //PreOrden
             if(rbtnPreOrden.Checked) 
@@ -86,6 +105,22 @@ namespace Arbol_AVL
 
                 NodosAVL.Preorden(arbolAVL.Raiz);
                 foreach (var valores in NodosAVL.listaPreorden)
+                {
+                    lstBox.Items.Add(valores);
+                }
+                Refresh();
+            }
+
+            //PostOrden
+            if(rbtnPostOrden.Checked)
+            {
+                post = true;
+                pintaR = 1;
+                NodosAVL.listaPostorden.Clear();
+                lstBox.Items.Clear();
+
+                NodosAVL.Postorden(arbolAVL.Raiz);
+                foreach(var valores in NodosAVL.listaPostorden)
                 {
                     lstBox.Items.Add(valores);
                 }
