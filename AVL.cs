@@ -352,7 +352,7 @@ namespace Arbol_AVL
             }
             else
             {
-                MessageBox.Show("Ese ya existe Rey, pruebe con otro","Error",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                MessageBox.Show("Ese valor no esta en el árbol Rey, pruebe con otro","Error",MessageBoxButtons.OK,MessageBoxIcon.Stop);
             }
 
             return nodoP;

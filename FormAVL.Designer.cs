@@ -136,7 +136,7 @@ namespace Arbol_AVL
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(491, 30);
+            this.label1.Location = new System.Drawing.Point(281, 355);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 23);
             this.label1.TabIndex = 5;
@@ -147,7 +147,7 @@ namespace Arbol_AVL
             this.lblAltura.AutoSize = true;
             this.lblAltura.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAltura.ForeColor = System.Drawing.Color.White;
-            this.lblAltura.Location = new System.Drawing.Point(621, 30);
+            this.lblAltura.Location = new System.Drawing.Point(411, 355);
             this.lblAltura.Name = "lblAltura";
             this.lblAltura.Size = new System.Drawing.Size(20, 23);
             this.lblAltura.TabIndex = 6;
@@ -157,8 +157,6 @@ namespace Arbol_AVL
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(17)))), ((int)(((byte)(84)))));
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lblAltura);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -265,6 +263,8 @@ namespace Arbol_AVL
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(665, 569);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAltura);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormAVL";
@@ -280,6 +280,7 @@ namespace Arbol_AVL
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
