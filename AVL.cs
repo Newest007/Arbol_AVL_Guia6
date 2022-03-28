@@ -34,6 +34,30 @@ namespace Arbol_AVL
             }
 
         }
+
+        public void Inorden(AVL nodo)
+        {
+
+            if (nodo != null)
+            {
+                Inorden(nodo.NodoIzquierdo);
+                listaInorden.Add(nodo.valor);
+                Inorden(nodo.NodoDerecho);
+            }
+        }
+
+
+        public void Postorden(AVL nodo)
+        {
+
+            if (nodo != null)
+            {
+                Postorden(nodo.NodoIzquierdo);
+                Postorden(nodo.NodoDerecho);
+                listaPostorden.Add(nodo.valor);
+            }
+        }
+
         //=============================================================//
 
 

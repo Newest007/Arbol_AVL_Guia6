@@ -23,6 +23,9 @@ namespace Arbol_AVL
         int cont2 = 0;
         int pintaR = 0;
 
+        bool post, preor, inor;
+        
+
         DibujaAVL arbolAVL = new DibujaAVL(null);
         DibujaAVL arbolAVL_Letra = new DibujaAVL(null);
         AVL NodosAVL = new AVL();
@@ -31,6 +34,7 @@ namespace Arbol_AVL
 
         private void FormAVL_Load(object sender, EventArgs e)
         {
+            post = inor = preor = false;
 
         }
 
@@ -42,6 +46,7 @@ namespace Arbol_AVL
             g = e.Graphics;
 
             arbolAVL.DibujarArbol(g, this.Font, Brushes.White, Brushes.Black, Pens.White, datb, Brushes.Black);
+            
             datb = 0;
 
             if(pintaR==1)
@@ -64,12 +69,27 @@ namespace Arbol_AVL
 
         }
 
+
         private void button5_Click(object sender, EventArgs e)
         {
+
             //PreOrden
             if(rbtnPreOrden.Checked) 
             {
+                preor = true;
+                pintaR = 1;
+                //pintaR = 3;
+                //timer1.Start();
+                //arbolAVL.colorear(g, this.Font, Brushes.Aqua, Brushes.Black, Pens.Black, arbolAVL.Raiz, post, inor,preor);
+                NodosAVL.listaPreorden.Clear();
+                lstBox.Items.Clear();
 
+                NodosAVL.Preorden(arbolAVL.Raiz);
+                foreach (var valores in NodosAVL.listaPreorden)
+                {
+                    lstBox.Items.Add(valores);
+                }
+                Refresh();
             }
 
 
@@ -167,6 +187,11 @@ namespace Arbol_AVL
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -41,12 +41,13 @@ namespace Arbol_AVL
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnRecorrer = new System.Windows.Forms.Button();
             this.rbtnPostOrden = new System.Windows.Forms.RadioButton();
             this.rbtnEnOrden = new System.Windows.Forms.RadioButton();
             this.rbtnPreOrden = new System.Windows.Forms.RadioButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lstBox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -178,33 +179,26 @@ namespace Arbol_AVL
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.lstBox);
             this.groupBox2.Controls.Add(this.btnRecorrer);
             this.groupBox2.Controls.Add(this.rbtnPostOrden);
             this.groupBox2.Controls.Add(this.rbtnEnOrden);
             this.groupBox2.Controls.Add(this.rbtnPreOrden);
             this.groupBox2.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(44, 381);
+            this.groupBox2.Location = new System.Drawing.Point(239, 381);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(577, 127);
+            this.groupBox2.Size = new System.Drawing.Size(402, 176);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ordenes";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(55, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(367, 34);
-            this.textBox2.TabIndex = 4;
             // 
             // btnRecorrer
             // 
             this.btnRecorrer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(17)))), ((int)(((byte)(84)))));
             this.btnRecorrer.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnRecorrer.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecorrer.Location = new System.Drawing.Point(447, 66);
+            this.btnRecorrer.Location = new System.Drawing.Point(271, 71);
             this.btnRecorrer.Name = "btnRecorrer";
             this.btnRecorrer.Size = new System.Drawing.Size(118, 39);
             this.btnRecorrer.TabIndex = 3;
@@ -215,7 +209,7 @@ namespace Arbol_AVL
             // rbtnPostOrden
             // 
             this.rbtnPostOrden.AutoSize = true;
-            this.rbtnPostOrden.Location = new System.Drawing.Point(405, 29);
+            this.rbtnPostOrden.Location = new System.Drawing.Point(132, 121);
             this.rbtnPostOrden.Name = "rbtnPostOrden";
             this.rbtnPostOrden.Size = new System.Drawing.Size(120, 30);
             this.rbtnPostOrden.TabIndex = 2;
@@ -226,7 +220,7 @@ namespace Arbol_AVL
             // rbtnEnOrden
             // 
             this.rbtnEnOrden.AutoSize = true;
-            this.rbtnEnOrden.Location = new System.Drawing.Point(225, 29);
+            this.rbtnEnOrden.Location = new System.Drawing.Point(137, 74);
             this.rbtnEnOrden.Name = "rbtnEnOrden";
             this.rbtnEnOrden.Size = new System.Drawing.Size(108, 30);
             this.rbtnEnOrden.TabIndex = 1;
@@ -237,7 +231,7 @@ namespace Arbol_AVL
             // rbtnPreOrden
             // 
             this.rbtnPreOrden.AutoSize = true;
-            this.rbtnPreOrden.Location = new System.Drawing.Point(39, 29);
+            this.rbtnPreOrden.Location = new System.Drawing.Point(137, 29);
             this.rbtnPreOrden.Name = "rbtnPreOrden";
             this.rbtnPreOrden.Size = new System.Drawing.Size(115, 30);
             this.rbtnPreOrden.TabIndex = 0;
@@ -250,12 +244,26 @@ namespace Arbol_AVL
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lstBox
+            // 
+            this.lstBox.FormattingEnabled = true;
+            this.lstBox.ItemHeight = 26;
+            this.lstBox.Location = new System.Drawing.Point(18, 29);
+            this.lstBox.Name = "lstBox";
+            this.lstBox.Size = new System.Drawing.Size(95, 134);
+            this.lstBox.TabIndex = 4;
+            // 
             // FormAVL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(57)))));
-            this.ClientSize = new System.Drawing.Size(665, 520);
+            this.ClientSize = new System.Drawing.Size(665, 569);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
@@ -291,9 +299,10 @@ namespace Arbol_AVL
         private System.Windows.Forms.RadioButton rbtnPostOrden;
         private System.Windows.Forms.RadioButton rbtnEnOrden;
         private System.Windows.Forms.RadioButton rbtnPreOrden;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnRecorrer;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ListBox lstBox;
     }
 }
 
